@@ -1,6 +1,9 @@
-package com.gtr.entity;
-//房屋类
+package com.gtr.Bean;
 
+import org.apache.ibatis.type.Alias;
+
+//房屋类
+@Alias("house")
 public class H {
     private int Hid;                                            //房屋编号
     private int RQid;                                           //小区编号
