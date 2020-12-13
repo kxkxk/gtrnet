@@ -32,6 +32,6 @@
     </environments>
     <!-- 映射器 -->
     <mappers>
-        <mapper resource="UserMapper.xml"/>
+        <mapper resource="Hmapper.xml"/>
     </mappers>
 </configuration>

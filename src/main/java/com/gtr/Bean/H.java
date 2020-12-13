@@ -2,9 +2,11 @@ package com.gtr.Bean;
 
 import org.apache.ibatis.type.Alias;
 
+import java.io.Serializable;
+
 //房屋类
 @Alias("house")
-public class H {
+public class H implements Serializable {
     private int Hid;                                            //房屋编号
     private int RQid;                                           //小区编号
     private String Hname;                                       //房屋名称
@@ -96,5 +98,8 @@ public class H {
 
     public void setHintroduce(String hintroduce) {
         Hintroduce = hintroduce;
+    }
+    public void testPrent(){
+        System.out.println(this.Hid+"//"+this.Hname+"//"+this.RQid+"//"+this.Hrent+"//"+this.Haddress+"//"+this.Hfloorface+"//"+this.Himage);
     }
 }
