@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace：命名空间，用于隔离sql，还有一个很重要的作用，后面会讲 -->
+<mapper namespace="com.gtr.Mapper.UserMapper">
+
+    <insert id="insertUser" parameterType="com.gtr.entity.U">
+        insert into U (Uemail,Uidentitytype,Uidentitynumber,Upassword,Uname,Uphone)
+         values(#{Uemail},#{Uidentitytype},#{Uidentitynumber},#{Upassword},#{Uname},#{Uphone})
+    </insert>
+    <select id="findAll" resultType="com.gtr.entity.U">
+         select * from U
+    </select>
+    <delete id="deleteUser" parameterType="java.lang.String">
+        delete from U where Uphone = #{Uphonr}
+    </delete>
+</mapper>

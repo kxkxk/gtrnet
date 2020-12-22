@@ -1,0 +1,28 @@
+.text-white{
+    color:white;
+}
+
+.fixedWidth{
+    width: 200px!important;
+}
+
+.padding10{
+    padding:10px;
+}
+
+.padding5{
+    padding:5px;
+}
+
+ul{
+    list-style-type: square;
+    line-height: 25px;
+}
+
+p{
+	padding: 10px;
+}
+
+table th{
+	text-align: center;
+}

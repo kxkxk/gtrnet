@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="user/login_in" method="post">
+    <span>姓名:</span><input type="text" name="Uname" placeholder="输入真实姓名"/>
+    <br><br>
+    <span>密码:</span><input type="password" name="Upassword" placeholder="输入密码"/>
+    <br><br>
+    <span>确认密码:</span><input type="password" placeholder="再次输入密码"/>
+    <br><br>
+    <span>电话:</span><input type="text" name="Uphone" />
+    <br><br>
+    <span>邮箱:</span><input type="text" name="Uemail" />
+    <br><br>
+    <span>证件类型:</span>
+    <select name="Uidentitytype" >
+        <option value="1">中华人民共和国身份证</option>
+        <option value="2">港澳台身份证</option>
+        <option value="3">外国护照</option>
+    </select>
+    <br><br>
+    <span>证件号码:</span><input type="text" name="Uidentitynumber" placeholder="输入证件号"/>
+    <br><br>
+    <input type="submit" value="提 交">
+</form>
+</body>
+</html>

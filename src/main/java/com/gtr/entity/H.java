@@ -1,4 +1,4 @@
-package com.gtr.Bean;
+package com.gtr.entity;
 
 import org.apache.ibatis.type.Alias;
 
