@@ -15,20 +15,13 @@ public class RegisterServiceImpl implements RegisterService {
     @Override
     public boolean addUser(U user) {
         System.out.println(userMapper.insertUser(user));
-//        if (userMapper.insertUser(user) > 0) {
-//            return true;
-//        } else {
-//            return false;
-//        }
-        return userMapper.insertUser(user)>0 ? true:false;
+        return userMapper.insertUser(user) > 0;
     }
 
 
     @Override
     public boolean deleteUser(String Uphone) {
-        if(userMapper.deleteUser(Uphone))
-            return true;
-        return false;
+        return userMapper.deleteUser(Uphone) > 0;
     }
 
 }

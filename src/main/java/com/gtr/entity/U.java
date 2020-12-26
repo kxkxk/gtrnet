@@ -10,7 +10,7 @@ public class U {
     private int Uidentitytype;          //证件类型
     private String Uidentitynumber;     //证件号
     private String Upassword;           //密码
-    private String Hinterestid;         //收藏
+    private String Hinterestid;        //收藏
     private String Hleaseid;            //发布
     private String Uname;               //用户名
     private String Uphone;              //手机号

@@ -1,12 +1,18 @@
 package com.gtr.Mapper;
 
 import com.gtr.entity.U;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 
 public interface UserMapper {
     int insertUser(U user);
     U findAll();
-    boolean deleteUser(String Uphone);
+    int deleteUser(String Uphone);
+    String findReleaseById(int Uid);
+    String findCollectionById(int Uid);
+    int updateUserCollection(int Uid, String Collection);
+    int updateUserRelease(int Uid, String Release);
+    int deleteUserCollection(int Uid,String newColl);
+    int deleteUserRelease(int Uid,String newRel);
 }

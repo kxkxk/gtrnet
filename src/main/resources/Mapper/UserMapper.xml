@@ -6,13 +6,32 @@
 <mapper namespace="com.gtr.Mapper.UserMapper">
 
     <insert id="insertUser" parameterType="com.gtr.entity.U">
-        insert into U (Uemail,Uidentitytype,Uidentitynumber,Upassword,Uname,Uphone)
-         values(#{Uemail},#{Uidentitytype},#{Uidentitynumber},#{Upassword},#{Uname},#{Uphone})
+        insert into U (Uemail,Uidentitytype,Uidentitynumber,Upassword,Hinterestid,Hleaseid,Uname,Uphone)
+         values(#{Uemail},#{Uidentitytype},#{Uidentitynumber},#{Upassword},'st','st',#{Uname},#{Uphone})
     </insert>
+    <update id="updateUserCollection">
+           update U set Hinterestid = Hinterestid + #{Collection} where Uid = #{Uid}
+    </update>
+    <update id="updateUserRelease">
+        update U set Hleaseid = Hleaseid + #{Release} where Uid = #{Uid}
+    </update>
     <select id="findAll" resultType="com.gtr.entity.U">
          select * from U
+    </select>
+    <select id="findReleaseById" resultType="java.lang.String">
+        select Hleaseid from U where Uid = #{Uid}
+    </select>
+    <select id="findCollectionById" resultType="java.lang.String">
+        select Hinterestid from U where Uid = #{Uid}
     </select>
     <delete id="deleteUser" parameterType="java.lang.String">
         delete from U where Uphone = #{Uphonr}
     </delete>
+    <update id="deleteUserCollection">
+        update U set Hinterestid = #{newColl} where Uid = #{Uid}
+    </update>
+    <update id="deleteUserRelease">
+        update U set Hleaseid = #{newRel} where Uid = #{Uid}
+    </update>
+
 </mapper>

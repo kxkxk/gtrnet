@@ -9,5 +9,23 @@
             resultType="com.gtr.entity.H">
         select * from H
     </select>
+    <select id="findHouseById" resultType="com.gtr.entity.H">
+        select * from H where Hid = #{Hid}
+    </select>
+    <select id="selectHouse" parameterType="com.gtr.entity.H" resultType="com.gtr.entity.H">
+        select * from H where Hname = like concat('%'+#{house.Hname}+'%')
+--                           小区
+        <if test="house.RQid != null">
+        and RQid = #{house.RQid}
+        </if>
+--                           租金
+        <if test="rentStart != -1 and rentEnd != -1">
+        and Hrent between #{rentStart} and #{rentEnd}
+        </if>
+--                           租赁方式
+        <if test="house.Hmethod != null">
+        and Hmethod = #{house.Hmethod}
+        </if>
+</select>
 
 </mapper>
