@@ -4,28 +4,41 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace：命名空间，用于隔离sql，还有一个很重要的作用，后面会讲 -->
 <mapper namespace="com.gtr.Mapper.HouseMapper">
+    <insert id="newHouse" parameterType="com.gtr.entity.H">
+        insert into H values (#{RQid},#{Hname},#{Hrent},#{Haddress},#{Hmethod},#{Hstructure},#{Hfloorface},#{Himage},#{Hintroduce})
+    </insert>
+    <update id="updateHouse">
+        update H set Hname = #{Hname},Hrent = #{Hrent},Haddress = #{Haddress}, Hmethod=#{Hmethod},
+                     Hstructure=#{Hstructure},Hfloorface=#{Hfloorface},Himage=#{Himage},Hintroduce=#{Hintroduce}
+                     where Hid = #{Hid}
+    </update>
+    <update id="updateImg">
+        update H set Himage = Himage + #{IPath} where Hid = #{Hid}
+    </update>
 
     <select id="findAllHouse"
             resultType="com.gtr.entity.H">
         select * from H
     </select>
-    <select id="findHouseById" resultType="com.gtr.entity.H">
+    <select id="findHouseById"  resultType="com.gtr.entity.H">
         select * from H where Hid = #{Hid}
     </select>
-    <select id="selectHouse" parameterType="com.gtr.entity.H" resultType="com.gtr.entity.H">
-        select * from H where Hname = like concat('%'+#{house.Hname}+'%')
---                           小区
-        <if test="house.RQid != null">
-        and RQid = #{house.RQid}
+    <select id="selectHouse" parameterType="h"  resultType="com.gtr.entity.H">
+        select * from H where
+        <if test="Hname != null">
+        Hname like concat('%',#{Hname},'%')
         </if>
---                           租金
-        <if test="rentStart != -1 and rentEnd != -1">
-        and Hrent between #{rentStart} and #{rentEnd}
+        <if test="RQid != -1">
+        and RQid = #{RQid}
         </if>
---                           租赁方式
-        <if test="house.Hmethod != null">
-        and Hmethod = #{house.Hmethod}
+        <if test="Hmethod != null">
+        and Hmethod = #{Hmethod}
         </if>
+        <if test="Hstructure != null">
+        and Hstructure like concat('%',#{Hstructure},'%')
+        </if>
+
 </select>
+
 
 </mapper>

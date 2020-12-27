@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>在Spring MVC程序中实现文件上传和下载</title>
+    <meta charset="UTF-8"><!DOCTYPE html>
+    <html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>在Spring MVC程序中实现文件上传和下载</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+        <link rel="stylesheet" th:href="@{/css/style.css}" />
+        <script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+        <script th:src="@{/js/script.js}"></script>
+    </head>
+<body>
+
+<div class="container" id="outerDiv">
+    <br>
+    <h3 class="text-center text-danger bg-danger padding10">在Spring
+        MVC程序中实现文件上传和下载</h3>
+    <hr>
+
+    <h4 class="bg-warning text-success padding">(1) 文件上传</h4>
+    <div class="content"><br>
+
+        <!-- 上传文件的表单的enctype必须设置为multipart/form-data -->
+        <!-- 上传文件的表单使用post方法提交 -->
+        <form id="form1" method="post" enctype="multipart/form-data"
+              action="files/upload" class="form-inline">
+            <!-- 如果设置了multiple属性，则上传的时候可以选择多个文件 -->
+            <!-- 产品图片：<input type="file" multiple name="pfile"> -->
+            产品图片：<input type="file" name="pfile">
+            <br><br>
+            <button type="button" id="uploadBtn" class="btn btn-sm btn-danger">ajax上传图片</button>
+        </form>
+
+        <br>上传的图片：<br>
+        <img id="img1" class="img-thumbnail" width="300" height="200" alt="上传的图片" />
+
+        <script>
+            $(document).ready(function(){
+                //处理id为uploadBtn的点击事件
+                $("#uploadBtn").click(function(){
+
+                    //如果是ajax提交包含上传文件的请求
+                    //需要用一个FormData对象封装表单数据
+                    var formData=new FormData($("#form1")[0]);
+
+                    $.ajax({
+                        url:'upload',
+                        type:'POST',
+                        data: formData,
+                        processData: false, //不使用默认方式处理上传的数据，默认会转成字符串
+                        contentType: false, //不使用默认的内容类型作为发送的数据的类型
+                        success: function(imgPath){ //通过方法参数获取返回的图片路径
+                            $("#img1").attr("src","uploadImg/"+imgPath);
+                        },
+                        error: function(req,status,error){
+                            alert("请求处理出错!!!"+error);
+                        }
+                    });
+
+                });
+            });
+        </script>
+
+    </div>
+    <br>
+    <h4 class="bg-warning text-success padding">(2) 文件下载</h4>
+    <div class="content">
+        <a href="files/download">下载成绩上传模板</a>
+    </div>
+
+</div>
+
+</body>
+</html>

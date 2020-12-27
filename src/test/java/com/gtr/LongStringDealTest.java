@@ -12,4 +12,8 @@ public class LongStringDealTest {
             System.out.println(i);
         }
     }
+    @Test
+    public void timeTest(){
+        System.out.println(System.currentTimeMillis());
+    }
 }

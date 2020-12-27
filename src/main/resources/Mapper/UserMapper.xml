@@ -33,5 +33,8 @@
     <update id="deleteUserRelease">
         update U set Hleaseid = #{newRel} where Uid = #{Uid}
     </update>
+    <update id="updateUserHead">
+        update U set Uhead = #{IPath} where Uid = #{Uid}
+    </update>
 
 </mapper>

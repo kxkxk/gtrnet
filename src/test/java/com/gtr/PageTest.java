@@ -1,5 +1,6 @@
 package com.gtr;
 
+import com.gtr.Service.House.HouseService;
 import com.gtr.entity.H;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,11 +11,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = GtrnetApplication.class)
 public class PageTest {
+
     @Autowired
-    H house;
+    HouseService houseService;
     @Test
     public void selectHouseTest(){
-        house.setHname("新房");
+        H house = new H();
+        house.setHname("房");
+        house.setRQid(1);
+        System.out.println(houseService.selectHouse(house).get(0).getHname()+"dasfaffaf");
     }
 }
 

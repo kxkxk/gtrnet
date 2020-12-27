@@ -5,7 +5,7 @@ import org.apache.ibatis.type.Alias;
 import java.io.Serializable;
 
 //房屋类
-@Alias("house")
+
 public class H implements Serializable {
     private int Hid;                                            //房屋编号
     private int RQid;                                           //小区编号
@@ -18,6 +18,7 @@ public class H implements Serializable {
     private String Himage;                                      //图片地址
     private String Hintroduce;                                  //介绍
     public H() {
+        this.setRQid(-1);
 
     }
     public int getHid() {

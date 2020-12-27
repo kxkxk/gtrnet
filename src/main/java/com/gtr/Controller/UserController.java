@@ -24,7 +24,7 @@ public class UserController {
         return "regsuc";
     }
     //删除用户
-    @PostMapping("delete_user")
+    @PostMapping("/delete_user")
     public String deleteUser(String Uphone){
         if(registerService.deleteUser(Uphone)){
             return "delsuc";

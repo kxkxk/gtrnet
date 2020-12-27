@@ -4,6 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace：命名空间，用于隔离sql，还有一个很重要的作用，后面会讲 -->
 <mapper namespace="com.gtr.Mapper.RQMapper">
+    <insert id="insertRQ">
+        insert into RQ values (#{RQname},#{RQintroduce},#{RQimage})
+    </insert>
 
     <select id="findAllRQ"
             resultType="com.gtr.entity.RQ">
@@ -11,6 +14,9 @@
     </select>
     <select id="findRQByHouse"  resultType="com.gtr.entity.RQ">
         select * from RQ where RQid = (select RQid from H where Hid = #{Hid})
+    </select>
+    <select id="findRQById" resultType="com.gtr.entity.RQ">
+        select * from RQ where RQid = #{RQid}
     </select>
 
 </mapper>
