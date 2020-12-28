@@ -16,4 +16,5 @@ public interface UserMapper {
     int deleteUserCollection(int Uid,String newColl);
     int deleteUserRelease(int Uid,String newRel);
     int updateUserHead(int Uid,String IPath);
+    U findUserById(int Uid);
 }

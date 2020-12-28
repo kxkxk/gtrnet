@@ -25,4 +25,9 @@ public class HouseServiceImpl implements HouseService {
     public boolean modifyHouse(H house) {
         return houseMapper.updateHouse(house)>0;
     }
+
+    @Override
+    public H findHouse(int Hid) {
+        return houseMapper.findHouseById(Hid);
+    }
 }

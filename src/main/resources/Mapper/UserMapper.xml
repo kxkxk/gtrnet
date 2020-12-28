@@ -24,6 +24,9 @@
     <select id="findCollectionById" resultType="java.lang.String">
         select Hinterestid from U where Uid = #{Uid}
     </select>
+    <select id="findUserById" resultType="com.gtr.entity.U">
+        select * from U where Uid = #{Uid}
+    </select>
     <delete id="deleteUser" parameterType="java.lang.String">
         delete from U where Uphone = #{Uphonr}
     </delete>

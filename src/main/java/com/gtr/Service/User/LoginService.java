@@ -1,5 +1,7 @@
 package com.gtr.Service.User;
 
+import com.gtr.entity.U;
+
 public interface LoginService {
-    boolean findUser(int Uid);
+    U findUser(int Uid);
 }

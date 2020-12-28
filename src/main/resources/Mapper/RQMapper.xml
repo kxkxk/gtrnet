@@ -7,6 +7,9 @@
     <insert id="insertRQ">
         insert into RQ values (#{RQname},#{RQintroduce},#{RQimage})
     </insert>
+    <update id="updateImg">
+        update RQ set RQimage = RQimage + #{url} where RQid = #{RQid}
+    </update>
 
     <select id="findAllRQ"
             resultType="com.gtr.entity.RQ">

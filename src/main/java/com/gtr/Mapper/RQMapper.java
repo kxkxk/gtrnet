@@ -13,4 +13,5 @@ public interface RQMapper {
     RQ findRQById(int RQid);
     //添加新小区
     int insertRQ(RQ rq);
+    int updateImg(int RQid, String url);
 }
