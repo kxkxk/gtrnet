@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+
+    <script type="text/javascript" src="/layui/layui.all.js"></script>
+</head>
+
+<body>
+
+<ul class="layui-nav" lay-filter="">
+    <li class="layui-nav-item">
+        <a href=""><img src="../layui/img/banner.jpg" class="layui-nav-img">登录</a></li>
+    <li class="layui-nav-item"><a href="">主页</a></li>
+    <li class="layui-nav-item"><a href="">房源</a></li>
+    <li class="layui-nav-item"><a href="">注册</a></li>
+    <li class="layui-nav-item">
+        <a href="">用户</a>
+        <dl class="layui-nav-child">
+            <dd><a href="">信息</a></dd>
+            <dd><a href="">上传</a></dd>
+        </dl>
+    </li>
+</ul>
+
+<div class="layui-side layui-bg-black" style="position:absolute;top:60px;">
+    <div class="layui-side-scroll">
+        <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+
+            <li class="layui-nav-item layui-nav-itemed">
+                <a class="" href="javascript:;">我的</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:;">信息</a></dd>
+                    <dd><a href="javascript:;">头像</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="">收藏</a></li>
+            <li class="layui-nav-item"><a href="">发布</a></li>
+        </ul>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div style="text-align:center;position: absolute;left: 300px">
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+    <legend>上传头像</legend>
+</fieldset>
+
+
+
+
+<div class="layui-upload">
+    <button type="button" class="layui-btn">上传图片</button>
+    <div class="layui-upload-list">
+        <img class="layui-upload-img" id="demo1">
+        <p id="demoText"></p>
+    </div>
+    <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top: 10px;">
+        现有头像：
+        <div class="layui-upload-list">
+
+            <img id="img_preview" alt="图片预览"
+                 src="../layui/img/banner.jpg" data-holder-rendered="true"
+                 style="width: 200px; display: block;">
+
+        </div>
+    </blockquote>
+</div>
+</div>
+
+<script>
+    $("#zx_img").change(function(e){
+        var file = e.target.files||e.dataTransfer.files;
+        if(file){
+            var reader = new FileReader();
+            reader.onload=function(){
+                $("#img_preview").attr("src", this.result);
+            }
+            reader.readAsDataURL(file[0]);
+        }
+    });
+</script>
+
+
+<script>
+    layui.use('carousel', function(){
+        var carousel = layui.carousel;
+        carousel.render({
+            elem: '#test1'
+            ,width: '100%'
+            ,arrow: 'always'
+        });
+    });
+</script>
+
+<script>
+    var element = layui.element;
+    var layer = layui.layer;
+    var form = layui.form;
+    form.render('select');
+    layui.element.init();
+</script>
+
+<script>
+
+    var layer = layui.layer;
+    var form = layui.form;
+    form.render('select');
+</script>
+</body>
+</html>

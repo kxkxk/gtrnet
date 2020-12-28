@@ -1,20 +1,146 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-<title>首页</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
-	<link rel="stylesheet" th:href="@{/css/style.css}" />
-	<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
-	<script th:src="@{/js/script.js}"></script>
+    <meta charset="UTF-8">
+    <title>王八坨子（青岛）</title>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/layui/css/main.css">
+    <script type="text/javascript" src="/layui/layui.all.js"></script>
 </head>
+
 <body>
 
-	<div class="container">
-             asdadadas
-		<li><a href="tosign" class="btn btn-sm btn-primary">1. Thymeleaf表达式</a></li>
-		<hr>
-	</div>
+<ul class="layui-nav" lay-filter="">
+    <li class="layui-nav-item">
+        <a href=""><img src="/layui/img/banner.jpg" class="layui-nav-img">登录</a></li>
+    <li class="layui-nav-item"><a href="">主页</a></li>
+    <li class="layui-nav-item"><a href="">房源</a></li>
+    <li class="layui-nav-item"><a href="">注册</a></li>
+    <li class="layui-nav-item">
+        <a href="">用户</a>
+        <dl class="layui-nav-child">
+            <dd><a href="">信息</a></dd>
+            <dd><a href="">上传</a></dd>
+        </dl>
+    </li>
+</ul>
+<div class="banner">
+    <div class="cont w1000">
+        <div class="title" >
+            <h11>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                青岛</h11>
+            <h3>王八坨子租房网</h3>
+            <h4>冬天了，给自己一个温暖的窝</h4>
+
+            <div class="layui-tab layui-tab-card">
+                <ul class="layui-tab-title">
+                    <li class="layui-this">楼盘</li>
+                    <li>商品名</li>
+                </ul>
+                <div class="layui-tab-content" style="height: 50px;">
+                    <div class="layui-tab-item layui-show">
+
+                        <form class="layui-form"  style=" text-align:center;
+color: #009688;" action="search1" method="post">
+
+                        <input type="text" name="title" required lay-verify="required" placeholder="请输入楼盘名" autocomplete="off" class="layui-input-block"
+                        style="width: 350px;float: left"
+                        >
+                        <button class="layui-btn" lay-submit lay-filter="formDemo" style="float: right" >找房</button>
+
+
+                    </form>
+
+                </div>
+
+                    <div class="layui-tab-item">
+
+                        <form class="layui-form"  style=" text-align:center;
+color: #009688;" action="search2" method="post">
+
+                        <input type="text" name="title" required lay-verify="required" placeholder="请输入关键字" autocomplete="off" class="layui-input-block"
+                               style="width: 350px;float: left"
+                        >
+                        <button class="layui-btn" lay-submit lay-filter="formDemo" style="float: right" >找房</button>
+
+
+                        </form>
+
+                    </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    </div>
+
+
+
+<div class="layui-carousel" id="test1">
+    <div carousel-item>
+        <div style="text-align:center"><img src="../layui/img/wbb1.jpg"></div>
+        <div style="text-align:center"><img src="../layui/img/wbb2.jpg"></div>
+        <div style="text-align:center"><img src="../layui/img/wbb3.jpg"></div>
+    </div>
+</div>
+
+<div class="footer-wrap">
+    <div class="footer w1000">
+        <div class="qrcode">
+            <img src="../layui/img/erweima.jpg">
+        </div>
+        <div class="practice-mode">
+            <img src="../layui/img/down_img.jpg">
+            <div class="text">
+                <h4 class="title">我的联系方式</h4>
+                <p>微信<span class="WeChat">1234567890</span></p>
+                <p>手机<span class="iphone">1234567890</span></p>
+                <p>邮箱<span class="email">1234567890@qq.com</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script>
+        layui.use('carousel', function(){
+            var carousel = layui.carousel;
+            carousel.render({
+                elem: '#test1'
+                ,width: '100%'
+                ,arrow: 'always'
+            });
+        });
+    </script>
+
+<script>
+    var element = layui.element;
+    var layer = layui.layer;
+    var form = layui.form;
+    form.render('select');
+    layui.element.init();
+</script>
+
+
+
 </body>
 </html>

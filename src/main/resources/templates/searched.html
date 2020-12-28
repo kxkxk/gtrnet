@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="/layui/css/layui.css">
+  <link rel="stylesheet" type="text/css" href="/layui/css/main.css">
+
+  <script type="text/javascript" src="/layui/layui.all.js"></script>
+</head>
+<body>
+<ul class="layui-nav" lay-filter="">
+  <li class="layui-nav-item">
+    <a href=""><img src="../layui/img/banner.jpg" class="layui-nav-img">登录</a></li>
+  <li class="layui-nav-item"><a href="">主页</a></li>
+  <li class="layui-nav-item  layui-this"><a href="">房源</a></li>
+  <li class="layui-nav-item"><a href="">注册</a></li>
+  <li class="layui-nav-item">
+    <a href="">用户</a>
+    <dl class="layui-nav-child">
+      <dd><a href="">信息</a></dd>
+      <dd><a href="">上传</a></dd>
+    </dl>
+  </li>
+</ul>
+
+  <div class="album-content w1000 layer-photos-demo"  id="layer-photos-demo">
+
+<br>
+
+    <form class="layui-form layui-form-pane" action="search"  method="post">
+
+<!--      搜索：商品名 钱 几室
+返回商品list
+-->
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">长输入框</label>
+        <div class="layui-input-block">
+          <input type="text" name="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
+      </div>
+
+
+
+
+
+      <div class="layui-form-item">
+        <div class="layui-inline">
+          <label class="layui-form-label">范围</label>
+          <div class="layui-input-inline" style="width: 100px;">
+            <input type="text" name="price_min" placeholder="￥" autocomplete="off" class="layui-input">
+          </div>
+          <div class="layui-form-mid">-</div>
+          <div class="layui-input-inline" style="width: 100px;">
+            <input type="text" name="price_max" placeholder="￥" autocomplete="off" class="layui-input">
+          </div>
+          <button class="layui-btn" lay-submit="" lay-filter="demo2">跳转式提交</button>
+        </div>
+      </div>
+
+      <div class="layui-form-item" pane="">
+        <label class="layui-form-label">单选框</label>
+        <div class="layui-input-block">
+          <input type="radio" name="sex" value="男" title="男" checked="">
+          <input type="radio" name="sex" value="女" title="女">
+          <input type="radio" name="sex" value="禁" title="禁用" disabled="">
+        </div>
+      </div>
+
+    </form>
+    <br>
+    <hr style="height: 3px" >
+    <br>
+<div style="height: 1300px">
+
+
+          <div class="layui-col-xs12 layui-col-sm4 layui-col-md4">
+            <div class="item">
+              <img src="../layui/img/xc_img4.jpg">
+              <div class="cont-text">
+                <div class="data">26800</div>
+                <p class="address"><i class="layui-icon layui-icon-location"></i><span>香港中路309号</span></p>
+                <p class="briefly">隆安华府</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+<!--      <div id="demo"></div>-->
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <div class="footer-wrap">
+    <div class="footer w1000">
+      <div class="qrcode">
+        <img src="../layui/img/erweima.jpg">
+      </div>
+      <div class="practice-mode">
+        <img src="../layui/img/down_img.jpg">
+        <div class="text">
+          <h4 class="title">我的联系方式</h4>
+          <p>微信<span class="WeChat">1234567890</span></p>
+          <p>手机<span class="iphone">1234567890</span></p>
+          <p>邮箱<span class="email">1234567890@qq.com</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+   layui.config({
+      base: '../layui/js/util/'
+    }).use(['element','laypage','form','layer','menu'],function(){
+      element = layui.element,laypage = layui.laypage,form = layui.form,layer = layui.layer,menu = layui.menu;
+      laypage.render({
+        elem: 'demo'
+        ,count: 70
+      });
+      layer.photos({
+        photos: '#layer-photos-demo'
+        ,anim: 5
+        ,tab:function(pic,layero){
+          console.log(pic,layero)
+        }
+      });
+      menu.init(); 
+    })
+  </script>
+
+
+<script>
+  var element = layui.element;
+  var layer = layui.layer;
+  var form = layui.form;
+  form.render('select');
+  form.render('radio');
+  layui.element.init();
+</script>
+</body>
+</html>

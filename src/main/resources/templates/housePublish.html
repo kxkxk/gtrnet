@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+
+    <script type="text/javascript" src="/layui/layui.all.js"></script>
+</head>
+
+<body>
+
+<ul class="layui-nav" lay-filter="">
+    <li class="layui-nav-item">
+        <a href=""><img src="../layui/img/banner.jpg" class="layui-nav-img">登录</a></li>
+    <li class="layui-nav-item"><a href="">主页</a></li>
+    <li class="layui-nav-item"><a href="">房源</a></li>
+    <li class="layui-nav-item"><a href="">注册</a></li>
+    <li class="layui-nav-item">
+        <a href="">用户</a>
+        <dl class="layui-nav-child">
+            <dd><a href="">信息</a></dd>
+            <dd><a href="">上传</a></dd>
+        </dl>
+    </li>
+</ul>
+
+<div class="layui-side layui-bg-black" style="position:absolute;top:60px">
+    <div class="layui-side-scroll">
+        <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+
+            <li class="layui-nav-item layui-nav-itemed">
+                <a class="" href="javascript:;">我的</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:;">信息</a></dd>
+                    <dd><a href="javascript:;">头像</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="">收藏</a></li>
+            <li class="layui-nav-item"><a href="">发布</a></li>
+        </ul>
+    </div>
+</div>
+<br>
+<form class="layui-form"  style=" text-align:center; color: #009688;" action="up">
+
+<!--上传房屋 全传 -->
+
+    <div class="layui-form-item">
+        <div class="layui-inline" >
+            <label class="layui-form-label">小区名</label>
+            <div class="layui-input-inline" style=" text-align:center; color: #009688;">
+                <input type="text" name="" required lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline" >
+            <label class="layui-form-label">商品名</label>
+            <div class="layui-input-inline">
+                <input type="" name="" required lay-verify="" placeholder="请输入" autocomplete="off" class="layui-input" id="pass1">
+            </div>
+        </div></div>
+    <div class="layui-form-item">
+        <div class="layui-inline" >
+            <label class="layui-form-label">地址</label>
+            <div class="layui-input-inline">
+                <input type="" name="" required lay-verify="" placeholder="请输入" autocomplete="off" class="layui-input" id="pass1">
+            </div>
+        </div></div>
+    <div class="layui-form-item">
+        <div class="layui-inline" >
+            <label class="layui-form-label">租金</label>
+            <div class="layui-input-inline">
+                <input type="number" name="" required lay-verify="" placeholder="请输入" autocomplete="off" class="layui-input" id="pass1">
+            </div>
+        </div></div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">租赁方式</label>
+            <div class="layui-input-inline">
+                <select name="type" lay-verify="required" lay-filter="type">
+                    <option value=""></option>
+                    <option value="1">日租</option>
+                    <option value="2">月租</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">朝向</label>
+            <div class="layui-input-inline">
+                <select name="type" lay-verify="required" lay-filter="type">
+                    <option value=""></option>
+                    <option value="1">东</option>
+                    <option value="2">南</option>
+                    <option value="3">北</option>
+                    <option value="4">西</option>
+                    <option value="5">东南</option>
+                    <option value="6">西南</option>
+                    <option value="7">东北</option>
+                    <option value="8">西北</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">室</label>
+            <div class="layui-input-inline">
+                <select name="type" lay-verify="required" lay-filter="type">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">5+</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">厅</label>
+            <div class="layui-input-inline">
+                <select name="type" lay-verify="required" lay-filter="type">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">4+</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-form-text">
+        <div class="layui-inline">
+        <label class="layui-form-label">简介</label>
+        <div class="layui-input-inline">
+            <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    </div>
+    <div class="layui-form-item">
+        <button class="layui-btn" lay-submit="" lay-filter="demo2">发布</button>
+    </div>
+    <div class="layui-upload">
+        <button type="button" class="layui-btn layui-btn-normal" id="test8">选择文件</button>
+        <button type="button" class="layui-btn" id="test9">开始上传</button>
+    </div>
+
+</form>
+
+<script>
+    layui.use('carousel', function(){
+        var carousel = layui.carousel;
+        carousel.render({
+            elem: '#test1'
+            ,width: '100%'
+            ,arrow: 'always'
+        });
+    });
+</script>
+
+<script>
+    var element = layui.element;
+    var layer = layui.layer;
+    var form = layui.form;
+    form.render('select');
+    layui.element.init();
+</script>
+
+<script>
+
+    var layer = layui.layer;
+    var form = layui.form;
+    form.render('select');
+</script>
+</body>
+</html>

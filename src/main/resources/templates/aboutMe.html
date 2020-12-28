@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+
+    <script type="text/javascript" src="/layui/layui.all.js"></script>
+</head>
+
+<body>
+
+<ul class="layui-nav" lay-filter="">
+    <li class="layui-nav-item">
+        <a href=""><img src="../layui/img/banner.jpg" class="layui-nav-img">登录</a></li>
+    <li class="layui-nav-item"><a href="">主页</a></li>
+    <li class="layui-nav-item"><a href="">房源</a></li>
+    <li class="layui-nav-item"><a href="">注册</a></li>
+    <li class="layui-nav-item">
+        <a href="">用户</a>
+        <dl class="layui-nav-child">
+            <dd><a href="">信息</a></dd>
+            <dd><a href="">上传</a></dd>
+        </dl>
+    </li>
+</ul>
+
+<div class="layui-side layui-bg-black" style="position:absolute;top:60px">
+    <div class="layui-side-scroll">
+        <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+
+            <li class="layui-nav-item layui-nav-itemed">
+                <a class="" href="javascript:;">我的</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:;">信息</a></dd>
+                    <dd><a href="javascript:;">头像</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="">收藏</a></li>
+            <li class="layui-nav-item"><a href="">发布</a></li>
+        </ul>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<form class="layui-form"  style=" text-align:center; color: #009688;" action="">
+
+
+
+    <div class="layui-form-item">
+        <div class="layui-inline" >
+            <label class="layui-form-label">用户名</label>
+            <div class="layui-input-inline" style=" text-align:center; color: #009688;">
+                <input type="text" name="username" required lay-verify="required" placeholder="请输入账号" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline" >
+            <label class="layui-form-label">用户密码</label>
+            <div class="layui-input-inline">
+                <input type="password" name="password" required lay-verify="pwd" placeholder="请输入密码" autocomplete="off" class="layui-input" id="pass1">
+            </div>
+        </div></div>
+    <div class="layui-form-item">
+        <div class="layui-inline" >
+            <label class="layui-form-label">邮箱</label>
+            <div class="layui-input-inline">
+                <input type="email" name="email" required lay-verify="emails" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+            </div>
+        </div></div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline" >
+            <label class="layui-form-label">联系方式</label>
+            <div class="layui-input-inline">
+                <input type="text" name="phone" required lay-verify="phones" placeholder="请输入手机号" autocomplete="off" class="layui-input">
+            </div>
+        </div></div>
+    <div class="layui-form-item">
+        <div class="layui-inline" >
+            <label class="layui-form-label">证件类型</label>
+            <div class="layui-input-inline">
+                <input type="text" name="phone" required lay-verify="phones" placeholder="中华人民共和国身份证" autocomplete="off" class="layui-input">
+            </div>
+        </div></div>
+
+
+
+    <div class="layui-form-item">
+        <div class="layui-inline" >
+            <label class="layui-form-label">证件号</label>
+            <div class="layui-input-inline">
+                <input type="text" name="phone" required lay-verify="phones" placeholder="请输入手机号" autocomplete="off" class="layui-input">
+            </div></div>
+    </div>
+
+
+</form>
+
+<script>
+    layui.use('carousel', function(){
+        var carousel = layui.carousel;
+        carousel.render({
+            elem: '#test1'
+            ,width: '100%'
+            ,arrow: 'always'
+        });
+    });
+</script>
+
+<script>
+    var element = layui.element;
+    var layer = layui.layer;
+    var form = layui.form;
+    form.render('select');
+    layui.element.init();
+</script>
+
+<script>
+
+    var layer = layui.layer;
+    var form = layui.form;
+    form.render('select');
+</script>
+</body>
+</html>

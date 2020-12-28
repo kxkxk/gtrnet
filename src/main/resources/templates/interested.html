@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+
+    <script type="text/javascript" src="/layui/layui.all.js"></script>
+</head>
+
+<body>
+
+<ul class="layui-nav" lay-filter="">
+    <li class="layui-nav-item">
+        <a href=""><img src="../layui/img/banner.jpg" class="layui-nav-img">登录</a></li>
+    <li class="layui-nav-item"><a href="">主页</a></li>
+    <li class="layui-nav-item"><a href="">房源</a></li>
+    <li class="layui-nav-item"><a href="">注册</a></li>
+    <li class="layui-nav-item">
+        <a href="">用户</a>
+        <dl class="layui-nav-child">
+            <dd><a href="">信息</a></dd>
+            <dd><a href="">上传</a></dd>
+        </dl>
+    </li>
+</ul>
+
+<div class="layui-side layui-bg-black" style="position:absolute;top:60px">
+    <div class="layui-side-scroll">
+        <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+
+            <li class="layui-nav-item layui-nav-itemed">
+                <a class="" href="javascript:;">我的</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:;">信息</a></dd>
+                    <dd><a href="javascript:;">头像</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="">收藏</a></li>
+            <li class="layui-nav-item"><a href="">发布</a></li>
+        </ul>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="layui-col-xs12 layui-col-sm4 layui-col-md4">
+站位
+</div>
+
+<div class="layui-col-xs12 layui-col-sm4 layui-col-md4">
+    <div class="item">
+        <img src="../layui/img/xc_img4.jpg">
+        <div class="cont-text">
+            <div class="data">46800</div>
+            <p class="address"><i class="layui-icon layui-icon-location"></i><span>香港中路309号</span></p>
+            <p class="briefly">隆安华府</p>
+            <button class="layui-btn layui-bg-red" lay-submit="" lay-filter="demo2">删除</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+    layui.use('carousel', function(){
+        var carousel = layui.carousel;
+        carousel.render({
+            elem: '#test1'
+            ,width: '100%'
+            ,arrow: 'always'
+        });
+    });
+</script>
+
+<script>
+    var element = layui.element;
+    var layer = layui.layer;
+    var form = layui.form;
+    form.render('select');
+    layui.element.init();
+</script>
+
+<script>
+
+    var layer = layui.layer;
+    var form = layui.form;
+    form.render('select');
+</script>
+</body>
+</html>

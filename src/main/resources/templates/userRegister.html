@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en"   xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <base th:href="@{/}">
+    <link rel="stylesheet" href="/layui/css/layui.css">
+
+    <script type="text/javascript" src="/layui/layui.all.js"></script>
+</head>
+
+<body>
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 35px">
+    <legend style=" text-align:center; color: #009688;">注册</legend>
+
+</fieldset>
+
+<form class="layui-form"  style=" text-align:center;
+color: #009688;" action="user/register" method="post">
+
+<!--注册： 除了 收藏 头像 全传-->
+
+    <div class="layui-form-item">
+        <div class="layui-inline" >
+        <label class="layui-form-label">用户名</label>
+        <div class="layui-input-inline" style=" text-align:center; color: #009688;">
+            <input type="text" name="Uname" required lay-verify="required" placeholder="请输入账号" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline" >
+        <label class="layui-form-label">用户密码</label>
+        <div class="layui-input-inline">
+            <input type="password" name="Upassword" required lay-verify="pwd" placeholder="请输入密码" autocomplete="off" class="layui-input" id="pass1">
+        </div>
+    </div></div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline" >
+        <label class="layui-form-label">邮箱</label>
+        <div class="layui-input-inline">
+            <input type="email" name="Uemail" required lay-verify="emails" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+        </div>
+    </div></div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline" >
+        <label class="layui-form-label">联系方式</label>
+        <div class="layui-input-inline">
+            <input type="text" name="Uphone" required lay-verify="phones" placeholder="请输入手机号" autocomplete="off" class="layui-input">
+        </div>
+    </div></div>
+
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">证件类型</label>
+            <div class="layui-input-inline">
+                <select name="Uidentitytype" lay-verify="required" lay-filter="type">
+                    <option value=""></option>
+                    <option value="1">中华人民共和国身份证</option>
+                    <option value="2">港澳台通行证</option>
+                    <option value="3">外国人居留证</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline" >
+        <label class="layui-form-label">证件号</label>
+        <div class="layui-input-inline">
+            <input type="text" name="Uidentitynumber" required lay-verify="phones" placeholder="请输入手机号" autocomplete="off" class="layui-input">
+        </div></div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+
+    </form>
+<script>
+
+        var layer = layui.layer;
+        var form = layui.form;
+        form.render('select');
+</script>
+</body>
+</html>
