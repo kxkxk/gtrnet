@@ -31,4 +31,9 @@ public class RQServiceImpl implements RQService {
         return rqMapper.updateImg(RQid, url) > 0;
     }
 
+    @Override
+    public boolean newRq(RQ rq) {
+        return rqMapper.insertRQ(rq) > 0;
+    }
+
 }

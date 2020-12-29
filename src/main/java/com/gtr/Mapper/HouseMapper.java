@@ -12,4 +12,5 @@ public interface HouseMapper {
     int newHouse(H house);
     int updateHouse(H house);
     int updateImg(int Hid,String IPath);
+    String getImg(int Hid);
 }

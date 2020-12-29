@@ -6,6 +6,7 @@ import java.util.List;
 
 
 public interface UserMapper {
+    U findUserByName(String Uname);
     int insertUser(U user);
     U findAll();
     int deleteUser(String Uphone);

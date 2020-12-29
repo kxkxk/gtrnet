@@ -9,4 +9,6 @@ public interface HouseService {
     boolean newHouse(H house);
     boolean modifyHouse(H house);
     H findHouse(int Hid);
+    List<String> getImg(int Hid);
+    List<H> getAllHouse();
 }

@@ -8,4 +8,5 @@ public interface RQService {
     RQ findRQ(int RQid);
     List<String> getRQImg(RQ rq);
     boolean insertRQImg(int RQid, String url);
+    boolean newRq(RQ rq);
 }

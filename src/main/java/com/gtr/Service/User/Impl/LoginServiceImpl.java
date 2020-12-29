@@ -14,4 +14,9 @@ public class LoginServiceImpl implements LoginService {
     public U findUser(int Uid) {
         return userMapper.findUserById(Uid);
     }
+
+    @Override
+    public U getUser(String uname) {
+        return userMapper.findUserByName(uname);
+    }
 }

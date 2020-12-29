@@ -5,7 +5,7 @@
 <!-- namespace：命名空间，用于隔离sql，还有一个很重要的作用，后面会讲 -->
 <mapper namespace="com.gtr.Mapper.RQMapper">
     <insert id="insertRQ">
-        insert into RQ values (#{RQname},#{RQintroduce},#{RQimage})
+        insert into RQ (RQname,RQintroduce) values (#{RQname},#{RQintroduce})
     </insert>
     <update id="updateImg">
         update RQ set RQimage = RQimage + #{url} where RQid = #{RQid}

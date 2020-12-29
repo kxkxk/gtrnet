@@ -39,6 +39,9 @@
         </if>
 
 </select>
+    <select id="getImg" resultType="java.lang.String">
+        SELECT Himage from H where Hid = #{Hid}
+    </select>
 
 
 </mapper>
